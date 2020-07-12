@@ -8,7 +8,8 @@
         "lint": "eslint .",
         "test": "jest --testPathPattern=./src/",
         "coverage": "jest --testPathPattern=./src/ --coverage",
-        "e2e": "jest --testPathPattern=./e2e/"
+        "e2e": "jest --testPathPattern=./e2e/",
+        "ci": "start-server-and-test start http://localhost:9000 test"
     },
     "author": "NazarovAn",
     "license": "ISC",
@@ -27,6 +28,7 @@
         "html-loader": "^0.5.5",
         "jest": "^25.1.0",
         "puppeteer": "^5.0.0",
+        "start-server-and-test": "^1.11.2",
         "webpack": "^4.42.1",
         "webpack-cli": "^3.3.11",
         "webpack-dev-server": "^3.10.3"

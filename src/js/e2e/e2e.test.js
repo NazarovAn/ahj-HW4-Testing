@@ -8,9 +8,9 @@ describe('Validate Widget ', () => {
 
   beforeAll(async () => {
     browser = await puppetteer.launch({
-      headless: false,
+      headless: true,
       slowMo: 100,
-      devtools: true,
+      devtools: false,
     });
     page = await browser.newPage();
   });
@@ -26,8 +26,7 @@ describe('Validate Widget ', () => {
       await input.type('4111111111111111');
       const submit = await page.$('.button');
       submit.click();
-      const visa = await page.$('.visa');
-      await visa.waitForSelector('.valid');
+      await page.waitForSelector('.valid');
     });
 
     test('should add "invalid" class for valid card number', async () => {
@@ -36,8 +35,7 @@ describe('Validate Widget ', () => {
       await input.type('4111111111111112');
       const submit = await page.$('.button');
       submit.click();
-      const newError = await page.$('.visa');
-      await newError.waitForSelector('.invalid');
+      await page.waitForSelector('.invalid');
     });
   });
 });
