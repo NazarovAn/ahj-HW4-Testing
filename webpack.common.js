@@ -32,6 +32,10 @@ module.exports = {
       ],
     },
     {
+      test: /\.txt$/i,
+      use: 'raw-loader',
+    },
+    {
       test: /\.(png|jpg|gif|ico)$/i,
       use: [{
         loader: 'file-loader',
